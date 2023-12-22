@@ -77,19 +77,12 @@
                     echo "<td>" . $row["criado_em"] . "</td>";
                     echo "<td>" . $row["atualizado_em"] . "</td>";
                     echo "<td> 
-                    <script> 
-        function ConfirmaExclusao() {
-      if (confirm('Tem certeza que deseja excluir esse registro?'))
-           location.href='excluir.php?id=" . $row["id"] . "';
-}
-        </script>
-        
+                    
         <a class = 'btn btn-primary'href='editar.php?id=" . $row["id"] . "'>Editar</a>
         
-        <button class  = 'btn btn-danger' onClick='ConfirmaExclusao()' href='excluir.php?id=" . $row["id"] . "'>Deletar</button></td>";
+        <a class  = 'btn btn-danger' href='excluir.php?id=" . $row["id"] . "'>Deletar</a></td>";
                 }
             }
-
 
             ?>
 
@@ -99,6 +92,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
