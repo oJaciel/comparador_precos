@@ -11,7 +11,8 @@
 <body>
 
     <?php
-        include('../../base/header.php')
+        include('../../base/header.php');
+        include('../../assets/modal/modal_categoria.php')
     ?>
 
 
@@ -19,37 +20,10 @@
     <button type="button" class="btn btn-primary ms-3 mb-3" data-bs-toggle="modal" data-bs-target="#ModalCadastro">
         Cadastrar Nova Categoria
     </button>
-    <div class="modal fade" id="ModalCadastro" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img src="../../assets/categoria/categoria_icon.png" alt="Icone Categoria">
-                    <h1 class="modal-title ms-3 fs-5" id="exampleModalLabel">Cadastrar Nova Categoria</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="criar.php" method="post">
-                        <div class='container'>
-                            <div class='row'>
-                                <div class='col-12 col-md-8'>
-                                    <label for="nome" class='form-label'>Nome:</label>
-                                    <input type="text" class='form-control' name="nome" placeholder="Insira o nome da categoria">
-                                </div>
-                            </div>
-                        </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <input type="submit" value="Salvar" class="btn btn-primary " id="button"></input>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <!-- ------------------------------------ -->
 
-    <!-- Listar Categorias -->
+    <!-- Listar Categorias / Editar / Excluir -->
     <table class='table table-striped'>
         <thead>
             <tr>
@@ -78,9 +52,9 @@
                     echo "<td>" . $row["atualizado_em"] . "</td>";
                     echo "<td> 
                     
-        <a class = 'btn btn-primary'href='editar.php?id=" . $row["id"] . "'>Editar</a>
-        
-        <a class  = 'btn btn-danger' href='excluir.php?id=" . $row["id"] . "'>Deletar</a></td>";
+                    <a class = 'btn btn-primary'href='editar.php?id=" . $row["id"] . "'>Editar</a>
+                
+                    <a class  = 'btn btn-danger' href='excluir.php?id=" . $row["id"] . "'>Deletar</a></td>";
                 }
             }
 
